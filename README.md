@@ -4,6 +4,7 @@
 
 # 1.BF？
 brainfuck，简称BF，皆在创建一种简单的、可以用最小的编译器来实现的、符合图灵完全思想的编程语言，这个语言由八种运算符构成：
+
 <img width="612" alt="image" src="https://github.com/ddx533534/brainfuck_rust/assets/51685343/1bbb2f7f-c3c2-4fda-9a49-c44d20b435fb">
 
 # 2.JIT?
