@@ -8,6 +8,7 @@ brainfuck，简称BF，皆在创建一种简单的、可以用最小的编译器
 <img width="612" alt="image" src="https://github.com/ddx533534/brainfuck_rust/assets/51685343/1bbb2f7f-c3c2-4fda-9a49-c44d20b435fb">
 
 # 2.JIT?
-即时编译（Just-in-time compilation），是一种执行计算机代码的方法，这种方法设计在程序执行过程中（在执行期）而不是在执行之前进行编译。JIT结合了编译代码的速度与解释的灵活性。
+即时编译（Just-in-time compilation），是一种执行计算机代码的方法，这种方法设计在程序执行过程中（在执行期）而不是在执行之前进行编译。
+JIT结合了编译代码的速度与解释的灵活性。
 
 
