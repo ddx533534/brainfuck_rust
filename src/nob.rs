@@ -19,14 +19,31 @@ pub enum OpKind {
     OpJumpIfNonZero,
 }
 
+
+impl OpKind {
+    pub fn get_raw(str: &char) -> OpKind {
+        match str {
+            '+' => { OpKind::OpInc }
+            '-' => { OpKind::OpDec }
+            '>' => { OpKind::OpRight }
+            '<' => { OpKind::OpLeft }
+            '.' => { OpKind::OpOutPut }
+            ',' => { OpKind::OpInput }
+            '[' => { OpKind::OpJumpIfZero }
+            ']' => { OpKind::OpJumpIfNonZero }
+            _ => { OpKind::OpInc }
+        }
+    }
+}
+
 #[derive(Debug)]
 pub struct Op {
-    op_kind: OpKind,
-    operand: i32,
+    pub op_kind: OpKind,
+    pub operand: usize,
 }
 
 impl Op {
-    pub fn new(op_kind: OpKind, operand: i32) -> Op {
+    pub fn new(op_kind: OpKind, operand: usize) -> Op {
         Op {
             op_kind,
             operand,
@@ -95,4 +112,56 @@ impl Lexer {
     // pub fn lexer_has_next(&self) -> bool {
     //     return self.pos < self.content.len()
     // }
+}
+
+// back patch
+pub struct AddrStack {
+    pub items: Vec<usize>,
+    pub count: usize,
+    pub capacity: usize,
+}
+
+impl AddrStack {
+    pub fn default() -> AddrStack {
+        AddrStack {
+            items: Vec::new(),
+            count: 0,
+            capacity: 1,
+        }
+    }
+
+    pub fn push_item(&mut self, item: usize) {
+        self.items.push(item);
+        self.count += 1;
+        if self.count > self.capacity {
+            self.capacity = self.capacity * 4;
+        }
+    }
+    pub fn pop_item(&mut self) -> usize {
+        if !self.is_empty() {
+            self.count -= 1;
+            return self.items.pop().unwrap();
+        }
+        return 0;
+    }
+
+    pub fn is_empty(&self) -> bool {
+        self.count == 0
+    }
+}
+
+pub struct Memory {
+    pub items: Vec<usize>,
+    pub count: usize,
+    pub capacity: usize,
+}
+
+impl Memory {
+    pub fn default() -> Memory {
+        Memory {
+            items: Vec::new(),
+            count: 0,
+            capacity: 1,
+        }
+    }
 }
