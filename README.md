@@ -49,6 +49,7 @@ Pointer :   ^
 ```
 
 最终控制台输出 `hello world!`
+如果想更详细的了解该过程，可以通过![brainfuck visualizer](https://ashupk.github.io/Brainfuck/brainfuck-visualizer-master/index.html)可视化整个指令解析的过程。
 
 # 1.BF？
 brainfuck，简称BF，皆在创建一种简单的、可以用最小的编译器来实现的、符合图灵完全思想的编程语言，这个语言由八种运算符构成：
