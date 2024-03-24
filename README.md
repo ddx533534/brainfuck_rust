@@ -1,6 +1,8 @@
 # brainfuck_rust
 
 本项目使用Rust语言为BF实现了一种JIT编译器(参考Tsoding版本)。
+1. 解释器（已完成）
+2. ...
 # 0.运行
 进入当前项目目录，直接在控制台下运行:`cargo run`即可。
 1. 本项目的指令路径为 `./src/instructions.txt`，可以自由更改文件中的指令内容。
